@@ -29,7 +29,16 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      // You're going to do your lab work in here. Replace this comment.
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min);
+      }
+      function getRandomCountries() {
+        const map1 = range(10).map(x => getRandomInt);
+        console.log(map1);
+      }
+      sortFunction()
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
